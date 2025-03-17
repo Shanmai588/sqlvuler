@@ -8,6 +8,8 @@ This tool is designed for educational purposes only. Use only on systems you hav
 
 SQLVuler is a comprehensive SQL injection vulnerability scanner with a terminal-like interface. It's designed to help security professionals and students learn about SQL injection vulnerabilities and how to detect them.
 
+![SQLVULER_OVERVIEW](https://raw.githubusercontent.com/shanmai588/sqlvuler/main/assets/sqlvuler.gif)
+
 ## Features
 
 - Interactive command-line interface
