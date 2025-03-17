@@ -1,0 +1,57 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "python.autoComplete.extraPaths": [
+            "${workspaceFolder}"
+        ],
+        "python.analysis.extraPaths": [
+            "${workspaceFolder}"
+        ],
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.provider": "autopep8",
+        "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
+        "editor.formatOnSave": true,
+        "editor.rulers": [
+            120
+        ],
+        "terminal.integrated.env.linux": {
+            "PYTHONPATH": "${workspaceFolder}"
+        },
+        "terminal.integrated.env.osx": {
+            "PYTHONPATH": "${workspaceFolder}"
+        },
+        "terminal.integrated.env.windows": {
+            "PYTHONPATH": "${workspaceFolder}"
+        }
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "SQLVuler: CLI",
+                "type": "debugpy",
+                "request": "launch",
+                "program": "${workspaceFolder}/sqlvuler.py",
+                "console": "integratedTerminal",
+                "justMyCode": false,
+                "env": {
+                    "PYTHONPATH": "${workspaceFolder}"
+                }
+            }
+        ]
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-python.python",
+            "ms-python.vscode-pylance",
+            "njpwerner.autodocstring",
+            "streetsidesoftware.code-spell-checker",
+            "visualstudioexptteam.vscodeintellicode"
+        ]
+    }
+}

